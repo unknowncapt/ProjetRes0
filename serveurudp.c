@@ -20,7 +20,7 @@ int countid(int valeur){
     while (valeur >= 0){
         if(valeur == INT_MAX){
         printf("NOMBRE MAX DE MESSAGE \n");
-        valeur = 0;
+        //valeur = 0;
         }
     valeur++;
     }
