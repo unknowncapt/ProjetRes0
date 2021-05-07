@@ -165,9 +165,10 @@ int main(int argc, char **argv)
 
        //envoimessage TOUT MIS EN COMMENTAIRE POUR L'INSTANT DE MEME POUR LA BOUCLE WHILE DANS CLIENTUDP
         char envoibis[1024];
-        printf("entrer votre message");
+        printf("entrer votre message \n");
         scanf("%s\n",buff);
         sendto(Mastersocket,envoibis,strlen(envoibis),0,(struct sockaddr *)&server, taille);
+        printf("Message envoyé \n");
 
     //aucun retour :/
      if(findPattern(buff,MAXLINE,"STOP")){
