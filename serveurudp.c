@@ -143,7 +143,6 @@ int main(int argc, char **argv)
         //strcat(bufftest,monid);
         //strcat(bufftest,diff);
 
-    while (1){
         char *hello = "Hello";
         char  recvu = recvfrom(Mastersocket, (char *) buff, MAXLINE, 0, (struct sockaddr *)&server, &taille);
         buff[recvu] = '\0';
@@ -155,13 +154,21 @@ int main(int argc, char **argv)
          getpeername(Mastersocket , (struct sockaddr*)&server , (socklen_t*)&taille);  
                     printf("CLient information , ip %s , port %d \n" , 
                           inet_ntoa(server.sin_addr) , ntohs(server.sin_port)); 
+    while (1){
+
+       /* int valread;
+        valread = read(Mastersocket,buff,1024);
+        if (valread = read(Mastersocket,buff,1024) != 0)
+        {
+            printf("test %s",valread);
+        } */
 
        //envoimessage TOUT MIS EN COMMENTAIRE POUR L'INSTANT DE MEME POUR LA BOUCLE WHILE DANS CLIENTUDP
         char envoibis[1024];
         printf("entrer votre message");
-        scanf("%s\n");
+        scanf("%s\n",buff);
         sendto(Mastersocket,envoibis,strlen(envoibis),0,(struct sockaddr *)&server, taille);
-    
+
     //aucun retour :/
      if(findPattern(buff,MAXLINE,"STOP")){
         printf("test réussi");

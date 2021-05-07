@@ -58,11 +58,12 @@ int main(int argc, char **argv)
         printf("réponse du Server : %s\n", buff);
 
 //test pour recevoir en continue un message envoyé par le serveur
-//         while (1){
-//        testreceiv = recvfrom(socketsama, buff, sizeof(buff), 0, (struct sockaddr *)&server, &len);
-//        buff[testreceiv] = '\0';
-//        printf("réponse du Server : %s\n", buff);
-//       }
+        while (1){
+        //testreceiv = recvfrom(socketsama, buff, sizeof(buff), 0, (struct sockaddr *)&server, &len);
+        testreceiv = read(socketsama,buff,1024);
+        buff[testreceiv] = '\0';
+        printf("réponse du Server : %s\n", buff);
+       }
 
 
     close(socketsama);
