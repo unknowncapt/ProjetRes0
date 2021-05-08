@@ -19,6 +19,7 @@ int main(int argc, char **argv)
     char buffdiff[MAXLINE];
     struct sockaddr_in server, client;
     socklen_t taille;
+    
     taille = sizeof(server);
 
 
